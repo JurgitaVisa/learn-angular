@@ -15,7 +15,7 @@ export class StarComponent implements OnInit {
 
   setIsActive() {
     this.isActive = !this.isActive;
-    console.log(this.isActive);
+    console.log("Start is active: ", this.isActive);
   }
 
 }
