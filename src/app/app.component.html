@@ -17,4 +17,6 @@
         </div>
     </app-panel>
     <h3 class="text-success">Assignment 4</h3>
+    <app-heart [isActive]="heart.isLiked" [likesCount]="heart.likesCount" (onLikeChange)="setLikes($event)">
+    </app-heart>
 </div>
