@@ -1,0 +1,6 @@
+/* @import "~bootstrap/dist/css/bootstrap.css"; */ 
+/* Importuojam boostrap atskirai ir galima naudoti enkapsuliaciją stiliams encapsulation: ViewEncapsulation.ShadowDom */
+/* tik kaip pvz - atskirai importuoti geriau nereiki, nes turėsim veikimo sutrikimus */
+.glyphicon {
+    color: aquamarine;
+}

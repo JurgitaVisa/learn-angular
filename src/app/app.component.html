@@ -4,7 +4,17 @@
     <h3 class="text-success">Assignment 1</h3>
     <app-authors></app-authors>
     <h3 class="text-success">Assignment 2</h3>
-    <app-star></app-star>
+    <app-star [isActive]="author.isFavorite" (change)="onFavoriteChange($event)"></app-star>
     <h3 class="text-success">Assignment 3</h3>
     <app-titlecase></app-titlecase>
+    <h3>Class 5</h3>
+    <app-panel>
+        <!-- ng-container negeneruoja papildomu div elementu -->
+        <ng-container class="heading">Heading</ng-container>
+        <div class="body">
+            <h5>Body</h5>
+            <p>Some content here...</p>
+        </div>
+    </app-panel>
+    <h3 class="text-success">Assignment 4</h3>
 </div>
