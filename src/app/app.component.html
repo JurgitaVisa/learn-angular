@@ -55,6 +55,11 @@
             <h3 class="text-success">Directive ngFor</h3>
             <button class="btn btn-success" (click)="loadCourses()">Load courses</button>
             <button class="btn btn-primary" (click)="onAddCourse()">Add course</button>
+            <button class="btn" [ngStyle]="{
+                'backgroundColor': canEdit? 'yellow': 'grey'
+            }">
+            Edit
+            </button>
             <br>
             <ul>
                 <!-- https://angular.io/api/common/NgForOf sarasas eksportuojamu lokaliu kintamuju - index, first, last, even, odd  -->
