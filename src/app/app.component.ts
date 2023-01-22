@@ -21,6 +21,13 @@ export class AppComponent {
   courses: any = [];
   canEdit = true;
 
+  task = {
+    title: 'some task',
+    assignee: {
+      name: 'John Smith'
+    }
+  }
+
   selectedTab = 'six';
 
   onFavoriteChange(eventArguments: EventArguments) {
