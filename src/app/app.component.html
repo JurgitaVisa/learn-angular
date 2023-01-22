@@ -58,7 +58,7 @@
             <button class="btn" [ngStyle]="{
                 'backgroundColor': canEdit? 'yellow': 'grey'
             }">
-            Edit
+                Edit
             </button>
             <br>
             <ul>
@@ -77,9 +77,19 @@
                         row)</span>
                 </li>
             </ul>
-            
+
             <h3 class="text-success">Safe traversal</h3>
-            <span>{{task.assignee?.name}}</span>
+            <p>tam atvejui, jei nebutu assignee (null/undefined), rasom task.assignee?.name </p>
+            <!-- <span>{{task.assignee?.name}}</span> -->
+            <span>{{task.assignee.name}}</span>
+
+            <h3 class="text-success">Custom directives</h3>
+            <input class="form-control" type="text" [appInputFormat]="'upper'">
+            <br>
+            <h3 class="text-success">Assignment 5</h3>
+            <app-zippy *ngFor="let zipp of zippies; index as i" title="{{zipp.title}}">
+                {{zipp.content}}
+            </app-zippy>
         </div>
 
     </div>

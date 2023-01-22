@@ -13,6 +13,8 @@ import { TitlecaseComponent } from './components/titlecase/titlecase.component';
 import { TitleCasePipe } from './title-case.pipe';
 import { PanelComponent } from './components/panel/panel.component';
 import { HeartComponent } from './components/heart/heart.component';
+import { InputFormatDirective } from './directives/input-format.directive';
+import { ZippyComponent } from './components/zippy/zippy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { HeartComponent } from './components/heart/heart.component';
     TitlecaseComponent,
     TitleCasePipe,
     PanelComponent,
-    HeartComponent
+    HeartComponent,
+    InputFormatDirective,
+    ZippyComponent
   ],
   imports: [
     BrowserModule,

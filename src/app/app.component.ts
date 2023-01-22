@@ -17,7 +17,7 @@ export class AppComponent {
     isLiked: false,
     likesCount: 10
   }
-
+  // lesson 6
   courses: any = [];
   canEdit = true;
 
@@ -29,6 +29,11 @@ export class AppComponent {
   }
 
   selectedTab = 'six';
+  // assignment 5
+  zippies = [
+    { id: 1, title: 'Zippy 1', content: 'Zipp1 content' },
+    { id: 2, title: 'Zippy 2', content: 'Zipp2 content' }
+  ]
 
   onFavoriteChange(eventArguments: EventArguments) {
     console.log("Favorite changed", eventArguments);
@@ -59,4 +64,5 @@ export class AppComponent {
   deleteCourse(courseId: number) {
     this.courses.splice(courseId, 1);
   }
+
 }
