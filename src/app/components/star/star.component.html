@@ -8,7 +8,15 @@
 <span 
     class="glyphicon" 
     [class.glyphicon-star]="isActive" 
-    [class.glyphicon-star-empty]="!isActive"
+    [class.glyphicon-star-empty]="!isActive"   
     (click)="setIsActive()"
->    
-</span>
+></span>
+
+<span 
+    class="glyphicon" 
+    [ngClass]="{
+        'glyphicon-star': isActive,
+        'glyphicon-star-empty': !isActive
+    }"
+    (click)="setIsActive()"
+></span>
