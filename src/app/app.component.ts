@@ -18,13 +18,15 @@ export class AppComponent {
     likesCount: 10
   }
 
+  courses = [];
+
   onFavoriteChange(eventArguments: EventArguments) {
     console.log("Favorite changed", eventArguments);
   }
 
-  setLikes(heartOutput: HeartComponentOutput){
+  setLikes(heartOutput: HeartComponentOutput) {
     console.log("Heart clicked", heartOutput);
-    this.heart.isLiked=heartOutput.isLiked;
-    this.heart.likesCount=heartOutput.likesCount;
+    this.heart.isLiked = heartOutput.isLiked;
+    this.heart.likesCount = heartOutput.likesCount;
   }
 }

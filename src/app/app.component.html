@@ -19,4 +19,13 @@
     <h3 class="text-success">Assignment 4</h3>
     <app-heart [isActive]="heart.isLiked" [likesCount]="heart.likesCount" (onLikeChange)="setLikes($event)">
     </app-heart>
+
+    <h3>Class 6</h3>
+    <div *ngIf="courses.length > 0; then coursesList else noCourses"> </div>
+    <ng-template #coursesList>
+        List of courses
+    </ng-template>
+    <ng-template #noCourses>
+        No courses to display
+    </ng-template>
 </div>
