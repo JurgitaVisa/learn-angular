@@ -18,7 +18,7 @@ export class AppComponent {
     likesCount: 10
   }
 
-  courses = [];
+  courses: any = [];
 
   selectedTab = 'six';
 
@@ -30,5 +30,25 @@ export class AppComponent {
     console.log("Heart clicked", heartOutput);
     this.heart.isLiked = heartOutput.isLiked;
     this.heart.likesCount = heartOutput.likesCount;
+  }
+
+  loadCourses() {
+    this.courses = [
+      { id: 1, name: "first" },
+      { id: 2, name: "second" },
+      { id: 3, name: "third" }
+    ];
+  }
+
+  trackCourse(index: number, course: any) {
+    return course ? course.id : undefined;
+  }
+
+  onAddCourse() {
+    this.courses.push({ id: 4, name: 'forth' });
+  }
+
+  deleteCourse(courseId: number) {
+    this.courses.splice(courseId, 1);
   }
 }

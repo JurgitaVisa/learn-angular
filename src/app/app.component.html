@@ -9,14 +9,14 @@
     </ul>
 
     <div [ngSwitch]="selectedTab">
-       
+
         <div *ngSwitchCase="'one'">
-             <h2>Fundamentals, components, templates</h2>
+            <h3 class="text-primary">Fundamentals, components, templates</h3>
             <courses></courses>
         </div>
 
         <div *ngSwitchCase="'two'">
-            <h2>ngFor, style binding, custom pipes </h2>
+            <h3 class="text-primary">Directive ngFor, style binding, custom pipes </h3>
             <h3 class="text-success">Assignment 1</h3>
             <app-authors></app-authors>
             <h3 class="text-success">Assignment 2</h3>
@@ -26,8 +26,7 @@
         </div>
 
         <div *ngSwitchCase="'five'">
-            <h3>Class 5</h3>
-            <h5>Input, output, passing event data, styles and encapsulation</h5>
+            <h3 class="text-primary">Class 5 - Input, output, passing event data, styles and encapsulation</h3>
             <app-panel>
                 <!-- ng-container negeneruoja papildomu div elementu -->
                 <ng-container class="heading">Heading</ng-container>
@@ -41,9 +40,9 @@
             </app-heart>
         </div>
 
-        <div *ngSwitchCase="'six'"> 
-            <h3>Class 6</h3>
-            <h5>ngIf and hidden attribute</h5>
+        <div *ngSwitchCase="'six'">
+            <h3 class="text-primary">Class 6 - Directives</h3>
+            <h3 class="text-success">Directive ngIf and hidden attribute</h3>
             <div *ngIf="courses.length > 0; then coursesList else noCourses"> </div>
             <ng-template #coursesList>
                 List of courses
@@ -52,6 +51,27 @@
                 No courses to display
             </ng-template>
             <div [hidden]="courses.length > 0">This is hidden when there are courses</div>
+
+            <h3 class="text-success">Directive ngFor</h3>
+            <button class="btn btn-success" (click)="loadCourses()">Load courses</button>
+            <button class="btn btn-primary" (click)="onAddCourse()">Add course</button>
+            <br>
+            <ul>
+                <!-- https://angular.io/api/common/NgForOf sarasas eksportuojamu lokaliu kintamuju - index, first, last, even, odd  -->
+                <li *ngFor="let course of courses; index as i">
+                    <button class="btn btn-danger" (click)="deleteCourse(i)">Delete</button>
+                    {{i}}-{{course.name}}
+                </li>
+                <br>
+                <!-- kad sektu pasikeitimus pagal id ir nesiustu is naujo kiekviena karta -->
+                <li *ngFor="let course of courses; trackBy: trackCourse ">
+                    {{course.name}}
+                </li>
+                <br>
+                <li *ngFor=" let course of courses; even as isEven">{{course.name}} <span *ngIf="isEven">(even
+                        row)</span>
+                </li>
+            </ul>
         </div>
 
     </div>
