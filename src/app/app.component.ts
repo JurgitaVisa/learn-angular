@@ -20,6 +20,8 @@ export class AppComponent {
 
   courses = [];
 
+  selectedTab = 'six';
+
   onFavoriteChange(eventArguments: EventArguments) {
     console.log("Favorite changed", eventArguments);
   }

@@ -4,7 +4,7 @@ import { CoursesService } from './courses.service';
 @Component({
     selector: 'courses',
     template: `
-    <h2>{{title}}</h2>
+    <h3>{{title}}</h3>
     <ul>
         <li *ngFor="let course of courses">{{course}}</li>
     </ul>  
@@ -15,8 +15,8 @@ import { CoursesService } from './courses.service';
     <p>{{course.price | currency:'EUR':true:'2.2-2'}}</p>
     <p>{{course.releaseDate | date:'yyyy-MM-dd'}}</p>
     <br>
-    <p>{{text | summary:10 }}</p>
-
+    <p>{{text | summary:25 }}</p>
+    <p>Keyboards events, ngModel, click events</p>
     <input type="text" class="form-control w-50 my-2" (keyup.enter)="onKeyUp($event)">  
     <input type="text" class="form-control w-50 my-2" #name (keyup.enter)="onEnter(name.value) ">  
     <input type="text" class="form-control w-50 my-2" [(ngModel)]="surname" (keyup.enter)="onEnterField()">  
@@ -37,14 +37,14 @@ export class CoursesComponent {
     isActive = true;
     surname: string = '';
     course = {
-        title: "Angular for beginers",
+        title: "Angular for beginers - formating pipes",
         rating: 4.92158,
         students: 30123,
         price: 12.5,
         releaseDate: new Date(2022, 9, 24) //prideda 1 men; formatai https://angular.io/api/common/DatePipe
 
     }
-    text = `Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos rerum deserunt quod ducimus. Velit, assumenda corporis veniam, officiis maxime ipsam iusto, quam esse rerum accusantium architecto unde ea porro quis.`
+    text = `Truncate pipe: Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos rerum deserunt quod ducimus. Velit, assumenda corporis veniam, officiis maxime ipsam iusto, quam esse rerum accusantium architecto unde ea porro quis.`
 
     constructor(service: CoursesService) {
         this.courses = service.getCourses();
@@ -52,6 +52,7 @@ export class CoursesComponent {
 
     onSave($event: any) {
         // $event.stopPropagation(); //to stop event bubble up
+        this.isActive=!this.isActive;
         console.log("button clicked: ", $event);
     }
 
